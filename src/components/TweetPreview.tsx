@@ -17,10 +17,10 @@ export const TweetPreview = ({tweet}: TweetPreviewProps) : JSX.Element =>{
     
     return (
         <div>
+            {tweet.image && <img className="tweet-image" src={tweet.image.url} alt={tweet.image.alt}/>}
             <h1>{tweet.authorName}</h1>
             <h2>@{tweet.authorHandle}</h2>
             <h3>{new Date(tweet.createdAt).toLocaleDateString("fr-FR")}</h3>
-            {tweet.image && <img className="tweet-image" src={tweet.image.url} alt={tweet.image.alt}/>}
             <p>{afficheContent}</p>
             {islong && <button type="button" onClick={() => setIsExpanded(e => !e)}>
                 {isExpanded ? "Voir moins" : "Voir plus"}</button>}
