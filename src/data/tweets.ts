@@ -5,7 +5,7 @@ export const tweets : Array<Tweet> = [{
     authorName : "Izuku Midoria",
     authorHandle : "MHA",
     content : "Je veux devenir le héros qui sauve les gens avec le sourire.",
-    createdAt : "2026-05-05T14:12:00.000Z"
+    createdAt : "2025-05-05T14:12:00.000Z"
 },{
     id : "00000000-0000-0000-0000-000000000002",
     authorName : "Light Yagami",
@@ -61,11 +61,13 @@ export const tweets : Array<Tweet> = [{
     authorName : "Eisei",
     authorHandle: "KingOfChine",
     content: "Je ne veux pas simplement gagner des batailles. Je veux mettre fin au cycle de la guerre et construire un monde dans lequel les générations futures n’auront plus à vivre dans la peur de la guerre.",
-    createdAt: "2026-11-01T10:12:00.000Z"
+    createdAt: "2025-11-01T10:12:00.000Z",
+    parentId: "00000000-0000-0000-0000-000000000008"
 },{
     id : "00000000-0000-0000-0000-000000000010",
     authorName : "All Might",
     authorHandle: "SymboleDeLaPaix",
     content: "N’aie pas peur. Pourquoi ? Parce que je suis là !",
-    createdAt: "2026-01-01T00:12:00.000Z"
+    createdAt: "2026-01-01T00:12:00.000Z",
+    parentId: "00000000-0000-0000-0000-000000000001"
 }]

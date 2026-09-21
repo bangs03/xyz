@@ -5,7 +5,8 @@ export type Tweet = {
     authorHandle : string; //nom d'utilisateur sans le caractère @, ajouté uniquement lors de l'affichage
     content : string; // contenu de tweet
     image? : TweetImage;
-    createdAt : string //data de format ISO 8601, par exple "2026-07-01T09:12:00.000Z"
+    createdAt : string; //data de format ISO 8601, par exple "2026-07-01T09:12:00.000Z"
+    parentId?: string
 }
 
 export type TweetImage = {

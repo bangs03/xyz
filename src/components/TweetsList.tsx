@@ -10,7 +10,7 @@ type TweetsListProps = {
 export const TweetsList = ({tweets}: TweetsListProps) : JSX.Element => {
     return(
         <div>
-         {tweets.map((tweet) => (<TweetPreview key={tweet.id} tweet={tweet}/>) )}
+         {tweets.map((tweet) => !tweet.parentId && (<TweetPreview key={tweet.id} tweet={tweet}/>) )}
         </div>
         )
 } 
