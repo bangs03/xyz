@@ -2,6 +2,7 @@ import type { JSX } from "react/jsx-runtime";
 import type { Tweet } from "../types/Tweet";
 import "./TweetPreview.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const max_length = 180;
 export type TweetPreviewProps = {
     tweet : Tweet
@@ -14,13 +15,13 @@ export const TweetPreview = ({tweet}: TweetPreviewProps) : JSX.Element =>{
         islong && !isExpanded
         ? tweet.content.slice(0, max_length) +"..." :
         tweet.content;
-    
+    const lien = "/tweets/"+tweet.id;
     return (
         <div>
-            {tweet.image && (<link rel="stylesheet" href={tweet.image.url}><img className="tweet-image" src={tweet.image.url} alt={tweet.image.alt}/></link>)}
+            {tweet.image && (<Link to={lien}><img className="tweet-image" src={tweet.image.url} alt={tweet.image.alt}/></Link>)}
             <h1>{tweet.authorName}</h1>
             <h2>@{tweet.authorHandle}</h2>
-            <link rel="stylesheet" href={"/tweets/:"+tweet.id} />
+            <Link to={lien}>Voir la discussion</Link>
             <h3>{new Date(tweet.createdAt).toLocaleDateString("fr-FR")}</h3>
             <p>{afficheContent}</p>
             {islong && <button type="button" onClick={() => setIsExpanded(e => !e)}>

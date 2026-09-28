@@ -8,10 +8,11 @@ import { TweetsMasterPage } from './pages/TweetsMasterPage.tsx'
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />}/>
+      <Route path="/" element={<App />}>
       <Route index element= {<TweetsMasterPage/>}/>
-      <Route path='tweets/:id' element={<TweetDetailsPage/>}/>
-      <Route path='*' element = {<NotFoundPage/>}/>
+      {/* <Route path='tweets/:id' element={<TweetDetailsPage/>}/>
+      <Route path='*' element = {<NotFoundPage/>}/> */}
+      </Route>
     </Routes>
   </BrowserRouter>,
 )
