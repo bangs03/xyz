@@ -20,7 +20,7 @@ export const TweetDetailsPage = (): JSX.Element => {
     return (
         <div>
             <TweetPreview tweet={leTweet} linkToDetail={false} />
-            {lestweets.length == 0 ?  (<TweetsList tweets={lestweets} />) : (<p>La Liste est vide</p>)}
+            {lestweets.length !== 0 ?  (<TweetsList tweets={lestweets} />) : (<><br /><br /><br /><br /><p>La Liste est vide</p></>)}
         </div>
     )
 }
