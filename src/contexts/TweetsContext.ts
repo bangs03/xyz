@@ -4,6 +4,7 @@ import type { Tweet } from "../types/Tweet"
 
 export type TweetContextValue = {
     tweets: Array<Tweet>;
+    addTweet: (content: string) => void
 }
 
 export const TweetContext = createContext<TweetContextValue | undefined> (undefined,);
