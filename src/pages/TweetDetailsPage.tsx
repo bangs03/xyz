@@ -1,12 +1,15 @@
 import { Link, useParams } from "react-router-dom";
-import { tweets } from "../data/tweets"
+// import { initialTweets } from "../data/initialTweets"
 import type { JSX } from "react/jsx-runtime";
 import { TweetPreview } from "../components/TweetPreview";
 import { TweetsList } from "../components/TweetsList";
+import { useContext } from "react";
+import { TweetContext } from "../contexts/TweetsContext";
 
 
 export const TweetDetailsPage = (): JSX.Element => {
     const {id} = useParams<{ id: string }>(); //renvoie un objet { ... } donc on doit faire la destructuration
+    const {tweets} = useContext(TweetContext)!;
     const leTweet = tweets.find(e => e.id === id)
     const lestweets = tweets.filter(e => e.parentId === id)
     if (leTweet == null) {

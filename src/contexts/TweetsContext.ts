@@ -1,0 +1,9 @@
+import { createContext } from "react";
+import type { Tweet } from "../types/Tweet"
+
+
+export type TweetContextValue = {
+    tweets: Array<Tweet>;
+}
+
+export const TweetContext = createContext<TweetContextValue | undefined> (undefined,);

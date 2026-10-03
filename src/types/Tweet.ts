@@ -6,7 +6,9 @@ export type Tweet = {
     content : string; // contenu de tweet
     image? : TweetImage;
     createdAt : string; //data de format ISO 8601, par exple "2026-07-01T09:12:00.000Z"
-    parentId?: string
+    parentId?: string;
+    likes: number;//le nombre de mentions " J'aime"
+    likedByMe: boolean;//qui indique si l'utilisateur courant aime le tweet.
 }
 
 export type TweetImage = {
