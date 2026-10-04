@@ -1,5 +1,65 @@
-.tweet-image{
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 20px;
+.tweet {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.tweet-avatar {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--bleu-clair);
+  color: var(--noir);
+  font-weight: bold;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tweet-body {
+  flex: 1;
+}
+
+.tweet-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.tweet-author {
+  font-weight: bold;
+}
+
+.tweet-meta {
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.tweet-image {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+.like-button {
+  background: transparent;
+  color: var(--noir);
+  border: 1px solid var(--noir);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+}
+
+.like-button:hover {
+  color: var(--magenta);
+  border-color: var(--magenta);
+}
+
+.like-button.liked {
+  color: var(--rose);
+  border-color: var(--rose);
 }

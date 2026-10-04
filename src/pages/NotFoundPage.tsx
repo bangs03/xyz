@@ -1,7 +1,12 @@
 import type { ReactElement } from "react";
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
-export const NotFoundPage = () : ReactElement => (<div>
-    <p>Coucou Page introuvable </p>
-    <Link to= {"/"}>Retour</Link>
-</div>)
+export const NotFoundPage = (): ReactElement => {
+    useDocumentTitle("Page introuvable")
+    return (
+    <div>
+        <p>Page introuvable </p>
+        <Link to={"/"}>Retour</Link>
+    </div>
+    )}

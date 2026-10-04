@@ -5,6 +5,7 @@ import { TweetPreview } from "../components/TweetPreview";
 import { TweetsList } from "../components/TweetsList";
 import { useContext } from "react";
 import { TweetContext } from "../contexts/TweetsContext";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 
 export const TweetDetailsPage = (): JSX.Element => {
@@ -12,6 +13,7 @@ export const TweetDetailsPage = (): JSX.Element => {
     const {tweets, toggleLike} = useContext(TweetContext)!;
     const leTweet = tweets.find(e => e.id === id)
     const lestweets = tweets.filter(e => e.parentId === id)
+    useDocumentTitle(leTweet ? `Tweet de ${leTweet.authorName}` : "Tweet introuvable")
     if (leTweet == null) {
         return (
             <div>
