@@ -7,11 +7,14 @@ import { TweetForm } from "../components/TweetForm"
 
 
 export const TweetsMasterPage = (): JSX.Element => {
-    const { tweets, addTweet } = useContext(TweetContext)!;
+    const { tweets, addTweet, toggleLike} = useContext(TweetContext)!;
     const tweetsMaster = tweets.filter(e => e.parentId === null || e.parentId === undefined);
+    const nombre = tweetsMaster.map((e)=> e.likes);
+    const total = nombre.reduce((som,n) => som+n, 0)
     return (
         <>
             <TweetForm onSubmit={addTweet} />
-            <TweetsList tweets={tweetsMaster} />
+            <TweetsList tweets={tweetsMaster} onToggleLike={toggleLike} />
+            <p>Total : {total} J'aime </p>
         </>)
 }

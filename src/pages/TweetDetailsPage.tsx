@@ -9,7 +9,7 @@ import { TweetContext } from "../contexts/TweetsContext";
 
 export const TweetDetailsPage = (): JSX.Element => {
     const {id} = useParams<{ id: string }>(); //renvoie un objet { ... } donc on doit faire la destructuration
-    const {tweets} = useContext(TweetContext)!;
+    const {tweets, toggleLike} = useContext(TweetContext)!;
     const leTweet = tweets.find(e => e.id === id)
     const lestweets = tweets.filter(e => e.parentId === id)
     if (leTweet == null) {
@@ -22,8 +22,8 @@ export const TweetDetailsPage = (): JSX.Element => {
     }
     return (
         <div>
-            <TweetPreview tweet={leTweet} linkToDetail={false} />
-            {lestweets.length !== 0 ?  (<TweetsList tweets={lestweets} />) : (<><br /><br /><br /><br /><p>La Liste est vide</p></>)}
+            <TweetPreview tweet={leTweet} linkToDetail={false} onToggleLike={toggleLike} />
+            {lestweets.length !== 0 ?  (<TweetsList tweets={lestweets} onToggleLike={toggleLike} />) : (<><br /><br /><br /><br /><p>La Liste est vide</p></>)}
         </div>
     )
 }

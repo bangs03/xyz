@@ -5,11 +5,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 const max_length = 180;
 export type TweetPreviewProps = {
-    tweet : Tweet,
-    linkToDetail?: boolean
+    tweet : Tweet;
+    linkToDetail?: boolean;
+    onToggleLike: (id: string) => void
 }
 
-export const TweetPreview = ({tweet, linkToDetail = true}: TweetPreviewProps) : JSX.Element =>{
+export const TweetPreview = ({tweet, linkToDetail = true, onToggleLike}: TweetPreviewProps) : JSX.Element =>{
     const [isExpanded, setIsExpanded] =useState(false);
     const islong = tweet.content.length> max_length;
     const afficheContent = 
@@ -27,6 +28,8 @@ export const TweetPreview = ({tweet, linkToDetail = true}: TweetPreviewProps) : 
             <p>{afficheContent}</p>
             {islong && <button type="button" onClick={() => setIsExpanded(e => !e)}>
                 {isExpanded ? "Voir moins" : "Voir plus"}</button>}
+            <button type="button" onClick={() => onToggleLike(tweet.id)}>{tweet.likedByMe ? "Je n'aime plus" : " J'aime"} </button>
+            <span>{tweet.likes}J'aime</span>
         </div>
     )
 }

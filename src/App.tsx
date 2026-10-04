@@ -22,7 +22,20 @@ function App() {
     }
     setTweets((tweets) => [newTweet, ...tweets])
   }
-  const context: TweetContextValue = { tweets, addTweet };
+
+
+  const toggleLike = (id: string): void => {
+    setTweets((tweets) => tweets.map((tweet) => {
+      if(tweet.id === id) {
+      return {...tweet, 
+        likedByMe:!tweet.likedByMe,
+         likes: tweet.likedByMe ? tweet.likes -1 : tweet.likes +1}
+      };
+      return tweet;  
+    }))
+  }
+
+  const context: TweetContextValue = { tweets, addTweet, toggleLike };
 
   return (
     <>
