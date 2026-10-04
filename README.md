@@ -30,3 +30,5 @@ If you are developing a production application, we recommend enabling type-aware
 ```
 
 See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+
+Je dois l'avouer à partir de la question 3 de la partie 3 j'ai utilise claude pas pour me generer les reponses mais plutot pour m'explique les questions et me dire ce qu'on me demandais exactement puis j'envoyais mes code pour qu'il me corrige sans me donner la reponse il m'explique mon erreur et me dis ce qu'il fallais sans me montrer le code donc claude etait plus comme un prof qui me guidais.
